@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "cva";
 type buttonProps = {} & React.HTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof style>;
 
-const style = cva("p-4 rounded-lg active:border active:border-4 leading-6 ", {
+const style = cva("p-4 rounded-lg active:border active:border-4 leading-6 cursor-pointer", {
   variants: {
     variant: {
       filled: [

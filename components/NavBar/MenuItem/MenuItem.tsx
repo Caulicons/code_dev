@@ -11,7 +11,7 @@ const MenuItem = ({ svgPath, onClick }: menuItemProps) => {
   return (
     <div
       onClick={onClick}
-      className="flex gap-4 opacity-20 hover:opacity-70 active:opacity-100 rounded-2xl items-center h-auto"
+      className="flex gap-4 opacity-30 hover:opacity-70 active:opacity-100 rounded-2xl items-center h-auto cursor-pointer"
     >
       <div className="p-3 bg-tertiary rounded-2xl">
         <Image

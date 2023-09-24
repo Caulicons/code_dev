@@ -12,7 +12,7 @@ const IconHamburger = ({}: IconHamburgerProps) => {
         height={48}
         width={48}
         alt="open infos"
-        className=" hover:bg-tertiary/10 active:bg-tertiary/20 rounded-2xl"
+        className=" hover:bg-tertiary/10 active:bg-tertiary/20 rounded-2xl cursor-pointer"
       />
     </div>
   );
