@@ -1,22 +1,28 @@
 type selectedProps = {
+  customMessage?: string;
   onChange: (e: React.FormEvent<HTMLSelectElement>) => void;
   options: string[];
 } & React.HTMLAttributes<HTMLSelectElement>;
 
-const Selected = ({ options, onChange, ...props }: selectedProps) => {
+const Selected = ({
+  options,
+  onChange,
+  customMessage,
+  ...props
+}: selectedProps) => {
   return (
     <select
       className={`
-      w-full rounded-xl border-r-8 border-r-transparent bg-gray-100/5 p-4  text-white/60 outline-none hover:bg-gray-100/10 focus:bg-gray-700/90
+      w-[200px] rounded-xl border-r-[14px] border-r-transparent bg-white/10 py-4 pl-[14px] text-white/60 outline-none hover:bg-white/20 focus:bg-gray-600/95
       `}
       onChange={onChange}
       defaultValue=""
     >
-      <option value="" disabled>
-        Selected a language
+      <option value={""} disabled>
+        {customMessage ?? "Selected"}
       </option>
       {options.map((option, index) => (
-        <option className={"my-3 "} value={option.toLowerCase()} key={index}>
+        <option className="p-3" value={option.toLowerCase()} key={index}>
           {option}
         </option>
       ))}
