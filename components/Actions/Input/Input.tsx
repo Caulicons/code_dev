@@ -2,7 +2,7 @@ import React from "react";
 
 type inputProps = {
   type?: "input" | "color";
-  label?: string;
+  label: string;
 } & React.HTMLAttributes<HTMLInputElement>;
 
 const InputOrColor = ({ type, label, ...props }: inputProps) => {
