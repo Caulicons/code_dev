@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <main className="grid place-content-center h-screen">
-        {test && <Selected options={options} onChange={handleChange} />}
+        {test && <Input  label="test"></Input>}
       </main>
     </>
   );
