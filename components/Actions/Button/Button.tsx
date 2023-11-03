@@ -1,10 +1,13 @@
+
+
+import cn from "@/utils/cn";
 import { cva, type VariantProps } from "cva";
 
-type buttonProps = {} & React.HTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof style>;
+type buttonProps = React.HTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof variants>;
 
-const style = cva(
-  "p-4 rounded-lg active:border active:border-4 leading-6 cursor-pointer",
+const variants = cva(
+  "p-4 rounded-lg active:border-4 leading-6 cursor-pointer",
   {
     variants: {
       variant: {
@@ -31,7 +34,7 @@ const style = cva(
 
 const Button = ({ variant, children, className, ...props }: buttonProps) => {
   return (
-    <button className={`${style({ variant })} ${className}`} {...props}>
+    <button className={cn(variants({ variant }), className)} {...props}>
       {children ?? "Button"}
     </button>
   );

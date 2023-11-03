@@ -6,9 +6,15 @@ type inputProps = {
 } & React.HTMLAttributes<HTMLInputElement>;
 
 const InputOrColor = ({ type, label, ...props }: inputProps) => {
+  if (type === "color")
+    return (
+      <input
+        type="color"
+        className="bg-darkBlue border p-[2.5px] border-white/100 h-10 min-w-[324px] rounded outline-none"
+        {...props}
+      />
+    );
 
-  if (type === "color") return <input type="color" {...props} />;
-  
   return (
     <input
       placeholder={label}
@@ -18,9 +24,9 @@ const InputOrColor = ({ type, label, ...props }: inputProps) => {
   );
 };
 
-const Input = (props : inputProps) => {
+const Input = (props: inputProps) => {
   return (
-    <div >
+    <div>
       <InputOrColor {...props} />
     </div>
   );
